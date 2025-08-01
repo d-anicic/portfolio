@@ -1,0 +1,877 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: #fcfcfb;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+ .grid-container {
+  font-family: 'Dancing Script', cursive;
+  display: grid;
+  grid-template-columns: 0.8fr 1.7fr 0.5fr;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+ .left {
+  background-color: #F1E3D3;
+  position: relative;
+  overflow: hidden;
+}
+
+.left p {
+  color: #690B22;
+  font-size: 80px;
+  font-weight: bold;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  animation: name 9s infinite;
+  position: absolute;
+}
+
+@keyframes name {
+  0%, 20% {
+    opacity: 1;
+    z-index: 2;
+  }
+  30%, 80% {
+    opacity: 0;
+  }
+  90%, 100% {
+    opacity: 1;
+    z-index: 2;
+  }
+}
+
+#p1 {
+  top: 10%;
+  left: 20%;
+}
+
+#p2 {
+  top: 10%;
+  right: 20%;
+}
+
+.title {
+  color: #690B22;
+  font-size: 48px;
+  font-weight: bold;
+   opacity: 0;
+  position: absolute;
+   animation: title 9s infinite;
+   text-align: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+    @keyframes title {
+  0%, 30% {
+    opacity: 0;
+  }
+  40%, 60% {
+    opacity: 1;
+  }
+  70%, 100% {
+    opacity: 0;
+  }
+}
+
+
+  .portrait {
+    position: absolute;
+      top: 0;
+    left: 0;
+    width: 100%;
+  height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: photo 9s infinite;
+    z-index: 0;
+  }
+
+
+  @keyframes photo {
+    0%, 60% {
+      opacity: 0;
+    }
+    70%, 90% {
+      opacity: 1;
+      z-index: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+.right {
+    background-color: rgb(10, 11, 11);
+ overflow: hidden;
+display: flex;
+align-items: stretch;
+justify-content: space-between;
+}
+
+    .marquee {
+  display: flex;
+  gap: 0;
+  width: 100%;
+  height: 100%;
+}
+
+  .column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  animation: scroll-down 10s linear infinite;
+}
+
+.column.reverse {
+  animation: scroll-up 10s linear infinite;
+}
+
+.column img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+@keyframes scroll-down {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes scroll-up {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.nav {
+  background-color: #690B22;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav ul {
+  list-style: none;
+  font-size: 30px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  text-align: center;
+}
+
+  .nav a {
+  text-decoration: none;
+  color: #F1E3D3;
+}
+
+
+.nav a:hover {
+  color: #1B4D3E;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+
+      .nav a i {
+        margin-right: 8px;
+        transition: transform 0.3s ease;
+      }
+
+      .nav a:hover i {
+        transform: rotate(15deg) scale(1.2);
+      }
+
+      .card{
+        width: 70%;
+        height: 100vh;
+        margin: 200px auto;
+        background-color: #F1E3D3;
+        display: flex;
+        align-items:flex-start;
+        justify-content:flex-start;
+        position: sticky;
+        top: 0;
+        flex-wrap:wrap;
+        flex-direction: column;
+        gap: 10px;
+        text-align: justify;
+      }
+
+      .card-title {
+        margin-top: 50px;
+        text-align: justify;
+      }
+
+      .card-title, .card-text, .button1{
+          margin-left: 50px;
+         }
+      .card-title{
+        font-family: 'Raleway', sans-serif;
+        font-size: 25px;
+        color: #000000;
+        width: 600px;
+        font-weight: bold;
+      }
+
+      .card-text{
+        padding-top: 20px;
+        font-family: 'Raleway', sans-serif;
+        color:#000000;
+        font-size: 25px;
+        font-weight: 200;
+        width: 600px;
+      }
+
+      .card-img{
+        margin-top: -300px;
+        width: 550px;
+        margin-right: 50px;
+        align-self: flex-end;
+      }
+
+
+        .button1 {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: #690B22;
+        color: white;
+        text-decoration: none;
+        font-size: 23px;
+        font-weight: bold;
+        white-space: nowrap; 
+        transition: background-color 0.3s ease;
+      }
+
+      
+      .button1:hover{
+        color: #e3e7e5;
+      }
+
+      i{
+        font-size: 50px;
+        margin-left: 50px;
+        margin-top: 50px;
+      }
+
+    #card2 p:nth-of-type(2) {
+      align-self: flex-end;
+      margin-top: -200px;
+      width: 550px;
+      margin-right: 50px;
+    }
+
+    #card2{
+      background-color: #690B22;
+    }
+
+    #card2 p{
+      color: #F1E3D3;
+    }
+
+    #card3{
+      align-items: center;
+    }
+
+    .container{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .img-container{
+      display: flex;
+      flex-direction: row;
+      gap: 50px;
+      margin-top: 50px;
+    }
+
+    .img-container .icon{
+      width: 50px;
+    }
+
+    .text-container{
+      width: 700px;
+      text-align: justify;
+      margin-top: 100px;
+       font-family: 'Raleway', sans-serif;
+       font-size: 25px;
+    }
+
+    #card3 p {
+      margin-left: 500px;
+    }
+
+    #card4{
+      background-color: #690B22;
+      position: relative;
+      overflow: hidden;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+  .photo-text{
+    position: absolute;
+    text-align: center;
+    opacity: 1;
+    animation: fadeOutText 7s ease-in-out infinite;
+    font-size: 25px;
+    color: #F1E3D3;
+    z-index: 2;
+  }
+
+    .card4-img{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows:  1fr 1fr;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      animation: fadeInGrid 7s ease-in-out infinite;
+      z-index: 1;
+    }
+
+    .card4-img img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @keyframes fadeOutText{
+      0% {
+        opacity: 1;
+        visibility: visible;
+      }
+      40% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+        visibility: hidden;
+      }
+      90% {
+        opacity: 0;
+        visibility: hidden;
+      }
+      100% {
+        opacity: 1;
+        visibility: visible;
+    }
+    }
+    
+    @keyframes fadeInGrid{
+      0% {
+        opacity: 0;
+      }
+      40% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+    }
+    }
+
+    .projects-title{
+      font-size: 27px;
+      margin: 50px auto;
+      align-items: center;
+      color: #690B22;
+      font-weight: bold;
+    }
+
+    #projects{
+      width: 70%;
+      background-color: #F1E3D3;
+      margin: 0px auto;
+      margin-bottom: 100px;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      text-align: center;
+      }
+
+     .project-container{
+      width: 90%;
+      background-color: #F1E3D3;
+      margin: -800px auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 80px;
+    }
+ 
+    .project-card{
+      perspective: 1500px;
+      height: 800px;
+      cursor: pointer;
+      position: relative;
+    }
+
+   .button2{
+    display: flex;
+    width: 200px;
+    height: 50px;
+    font-size: 23px;
+    background-color: #690B22;
+    text-decoration: none;
+  margin-left: 40%;
+    padding-left: 5px;
+    padding-top: 5px;
+   }
+
+
+   .button2 a{
+    text-decoration: none;
+    color: #F1E3D3;
+   }
+   
+ .button2 a:hover {
+  color: #ccc;
+ }
+
+    .card-front,
+    .card-back {
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgb(0,0,0,0.15);
+      position: absolute;
+      top: 0;
+      left: 0;
+      backface-visibility: hidden;
+      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .card-front{
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+
+    .image-grid{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 6px;
+      width: 100%;
+      height: 100%;
+    }
+ 
+
+    .image-grid img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .card-back{
+      font-size: 25px;
+      background-color: #690B22;
+      color: #F1E3D3;
+      transform: rotateY(180deg);
+      padding: 30px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+
+    .project-card:hover .card-front{
+      transform: rotateY(180deg);
+    }
+
+    .project-card:hover .card-back{
+      transform: rotateY(0);
+    }
+
+    .card-back p{
+      width: 500px;
+      text-align: justify;
+      margin-top: 50px;
+    }
+
+
+    .contact-section {
+  margin-top: 300px;
+  padding: 10px 10px ;
+  background: #f9f9f9;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-container {
+  max-width: 1000px;
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 50px;
+}
+
+.contact-title {
+  text-align: center;
+  font-size: 27px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+  padding-right: 50px;
+}
+
+.intro-text {
+  font-size: 23px;
+  color: #444;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 23px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  padding: 10px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #333;
+}
+
+.social-links a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #666;
+}
+
+
+.footer {
+  margin-top: 200px;
+  position: relative;
+  background-color: #111;
+  color: #fff;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.wave-container {
+  position: absolute;
+  top: -80px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 1;
+}
+
+.footer-wave {
+  width: 100%;
+  height: 100%;
+  animation: waveMove 8s ease-in-out infinite;
+}
+
+@keyframes waveMove {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-25px); }
+  100% { transform: translateX(0); }
+}
+
+.footer-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.footer-name {
+  font-weight: 500;
+  opacity: 0.8;
+  margin: 0;
+  font-size: 23px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ccc;
+}
+
+.back-to-top {
+  padding: 10px 10px;
+  background-color: #fff;
+  color: #111;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.back-to-top:hover {
+  background-color: #ddd;
+}
+
+
+
+  @media screen and (max-width: 767px){
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .left,
+  .right,
+  .nav {
+    height: auto;
+    width: 100%;
+  }
+
+  .left p {
+    writing-mode: horizontal-tb;
+    font-size: 40px;
+    position: relative;
+    left: auto;
+    top: auto;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 28px;
+    position: static;
+    transform: none;
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .portrait {
+    position: static;
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .marquee {
+    flex-direction: column;
+  }
+
+  .column img {
+    height: 150px;
+  }
+
+  .nav{
+    height: 50vh;
+  }
+  .nav ul {
+    font-size: 20px;
+    gap: 20px;
+  }
+
+  .card {
+    width: 90%;
+    margin: 100px auto;
+    height: 100vh;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .card-title,
+  .card-text,
+  .button1 {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .card-title {
+    font-size: 20px;
+    width: 100%;
+  }
+
+  .card-text {
+    text-align: justify;
+    font-size: 25px;
+    width: 100%;
+  }
+
+  .card-img {
+    margin: 20px auto 0;
+    width: 90%;
+    align-self: center;
+    position: relative;
+  }
+
+  .button1 {
+    width: 100%;
+    max-width: 200px;
+    font-size: 18px;
+  }
+  
+  
+#card{
+display: grid;
+grid-template-columns: 1fr 2fr;
+}
+
+#card2 p:nth-of-type(1) {
+  width: 80%;
+}
+   i{
+    font-size: 40px;
+    margin-left: 0px;
+      }
+
+    #card2 p:nth-of-type(2) {
+      margin-top: 10%;
+      width: 90%;
+      margin-right: 20px;
+    }
+
+    #card3 p:nth-of-type(1) {
+      align-items: flex-start;
+    }
+
+    #card3 {
+      align-items: flex-start;
+    }
+
+    #card3 p{
+       margin-left: 3%;
+    }
+
+    .container{
+      margin-left: 25%;
+      margin-top: 10px;
+      gap: 50px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .img-container{
+      margin-left: 28%;
+      display: flex;
+      flex-direction: row;
+      gap: 50px;
+      margin-top: 30px;
+    }
+
+    .text-container{
+      width: 100%;
+      text-align: justify;
+      margin-top: 30%;
+    }
+
+
+}
+
+   
+
+
+
+
+
